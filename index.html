@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentasi Jangkrik - Ahmad Raffi Hakim</title>
+    <style>
+        /* Reset dan Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+        
+        /* Container Presentasi */
+        .presentation-container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        
+        /* Slide Individual */
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            padding: 4rem;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            transition: all 0.5s ease;
+        }
+        
+        /* Judul Slide */
+        .slide h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* Konten Slide */
+        .slide-content {
+            max-width: 800px;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: #34495e;
+            background-color: rgba(255,255,255,0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Daftar Bullet */
+        .bullet-list {
+            text-align: left;
+            margin-left: 2rem;
+        }
+        
+        .bullet-list li {
+            margin-bottom: 1rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .bullet-list li:before {
+            content: "•";
+            color: #e74c3c;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+        
+        /* Footer/Navigasi */
+        .slide-footer {
+            position: absolute;
+            bottom: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 4rem;
+        }
+        
+        .nav-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .nav-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        .nav-button:active {
+            transform: translateY(0);
+        }
+        
+        /* Slide Khusus */
+        #cover-slide {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        #cover-slide h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        #cover-slide .subtitle {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+            margin-bottom: 3rem;
+        }
+        
+        #cover-slide .author {
+            font-size: 1.3rem;
+            color: #34495e;
+            margin-top: 2rem;
+            font-weight: 500;
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 2rem;
+            }
+            
+            .slide h1 {
+                font-size: 2rem;
+            }
+            
+            .slide-content {
+                font-size: 1.1rem;
+                padding: 1.5rem;
+            }
+            
+            #cover-slide h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container" id="presentation">
+        <!-- Slide 1: Cover -->
+        <div class="slide" id="cover-slide">
+            <h1>TUGAS PRESENTASI</h1>
+            <div class="subtitle">Tentang Jangkrik</div>
+            <div class="slide-content">
+                <p>Mengenal lebih dekat serangga yang menghasilkan suara khas "krik-krik"</p>
+            </div>
+            <div class="author">Ahmad Raffi Hakim<br>Absen 02 (X-3)</div>
+        </div>
+        
+        <!-- Slide 2: Objek -->
+        <div class="slide">
+            <h1>OBJEK</h1>
+            <div class="slide-content">
+                <p>Jangkrik adalah jenis serangga dari ordo Orthoptera dan termasuk dalam famili Gryllidae. Ciri khas jangkrik adalah suaranya yang berbunyi "krik-krik", yang hanya dihasilkan oleh jangkrik jantan.</p>
+                <p>Jangkrik memiliki tubuh berwarna cokelat hingga hitam, enam kaki, dua antena panjang, dan sepasang sayap.</p>
+            </div>
+            <div class="slide-footer">
+                <button class="nav-button" onclick="prevSlide()">Sebelumnya</button>
+                <button class="nav-button" onclick="nextSlide()">Berikutnya</button>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Deskripsi Bagian -->
+        <div class="slide">
+            <h1>DESKRIPSI BAGIAN</h1>
+            <div class="slide-content">
+                <ul class="bullet-list">
+                    <li><strong>Kepala:</strong> Terdapat dua mata majemuk dan dua antena panjang yang berfungsi sebagai alat peraba.</li>
+                    <li><strong>Dada:</strong> Memiliki tiga pasang kaki, di mana kaki belakang lebih besar untuk melompat.</li>
+                    <li><strong>Perut:</strong> Memanjang dan terdiri dari beberapa segment, dengan alat reproduksi di bagian ujungnya.</li>
+                    <li><strong>Sayap:</strong> Dua pasang sayap, sayap depan keras dan berfungsi sebagai alat suara pada jantan.</li>
+                    <li><strong>Warna tubuh:</strong> Umumnya hitam, cokelat tua, atau cokelat kekuningan tergantung spesies.</li>
+                </ul>
+            </div>
+            <div class="slide-footer">
+                <button class="nav-button" onclick="prevSlide()">Sebelumnya</button>
+                <button class="nav-button" onclick="nextSlide()">Berikutnya</button>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Manfaat -->
+        <div class="slide">
+            <h1>MANFAAT JANGKRIK</h1>
+            <div class="slide-content">
+                <ul class="bullet-list">
+                    <li>Sebagai pakan hewan peliharaan (burung, ikan, reptil).</li>
+                    <li>Digunakan dalam pengobatan tradisional di beberapa budaya.</li>
+                    <li>Sumber protein alternatif karena kandungan gizinya yang tinggi.</li>
+                    <li>Simbol budaya dalam kesenian atau mitologi di beberapa negara.</li>
+                </ul>
+            </div>
+            <div class="slide-footer">
+                <button class="nav-button" onclick="prevSlide()">Sebelumnya</button>
+                <button class="nav-button" onclick="nextSlide()">Berikutnya</button>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Kesimpulan -->
+        <div class="slide">
+            <h1>KESIMPULAN</h1>
+            <div class="slide-content">
+                <p>Jangkrik adalah serangga kecil yang memiliki banyak keunikan. Suaranya khas, perilakunya menarik, dan manfaatnya cukup besar bagi manusia.</p>
+                <p>Dengan memahami perilaku dan kebutuhan jangkrik, kita bisa menjaga kelestariannya dan memanfaatkannya secara berkelanjutan.</p>
+            </div>
+            <div class="slide-footer">
+                <button class="nav-button" onclick="prevSlide()">Sebelumnya</button>
+                <button class="nav-button" onclick="nextSlide()">Berikutnya</button>
+            </div>
+        </div>
+        
+        <!-- Slide 6: Penutup -->
+        <div class="slide">
+            <h1>TERIMA KASIH</h1>
+            <div class="slide-content">
+                <p>Presentasi tentang jangkrik oleh Ahmad Raffi Hakim</p>
+                <p>Absen 02 (X-3)</p>
+            </div>
+            <div class="slide-footer">
+                <button class="nav-button" onclick="prevSlide()">Sebelumnya</button>
+                <button class="nav-button" onclick="goToStart()">Ke Awal</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigasi Slide
+        const presentation = document.getElementById('presentation');
+        let currentSlide = 0;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                scrollToSlide();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                scrollToSlide();
+            }
+        }
+        
+        function goToStart() {
+            currentSlide = 0;
+            scrollToSlide();
+        }
+        
+        function scrollToSlide() {
+            const slideWidth = window.innerWidth;
+            presentation.scrollTo({
+                left: slideWidth * currentSlide,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Navigasi dengan Keyboard
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+        
+        // Navigasi dengan Swipe (untuk perangkat touch)
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        presentation.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+        
+        presentation.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+            } else if (touchEndX > touchStartX + 50) {
+                prevSlide();
+            }
+        }
+    </script>
+</body>
+</html>
